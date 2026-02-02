@@ -1,0 +1,84 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+  padding: 20px;
+}
+
+nav {
+  margin-bottom: 20px;
+  background-color: #fff;
+  padding: 1rem 2rem;
+  display: flex;
+  gap: 20px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  border-radius: 5px;
+  box-shadow: var(--shadow);
+}
+
+nav a {
+  margin-right: 15px;
+  text-decoration: none;
+  color: #333;
+}
+
+nav a.active {
+  font-weight: bold;
+  color: #007BFF;
+}
+
+.prodcuts-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  background-color: #fff;
+  padding: 15px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.card img {
+  max-width: 100%;
+  height: auto;
+}
+
+.card h2 {
+  font-size: 1.1em;
+  margin: 10px 0;
+}
+
+.card p {
+  color: #007BFF;
+  font-weight: bold;
+}
+
+.card a {
+  display: inline-block;
+  margin-top: 10px;
+  text-decoration: none;
+  color: #fff;
+  background-color: #007BFF;
+  padding: 8px 12px;
+  border-radius: 4px;
+}
+
+.card a:hover {
+  background-color: #0056b3;
+}
