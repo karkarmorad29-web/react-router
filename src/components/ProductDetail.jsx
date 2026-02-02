@@ -9,15 +9,20 @@ const ProductDetail = () => {
 
     useEffect(() => {
 
-        axios.get(`https://fakestoreapi.com/products/${id}`)
+        fetch(`https://fakestoreapi.com/products/${id}`)
             .then(response => {
-                if (response.data) navigate("/products");
-                setProduct(response.data);
-            }).catch(() => navigate("/products"));
+                if (!response.ok) {
+                    navigate("/products");
+                    return;
+                }
+                return response.json();
+            })
+            .then(data => setProduct(data))
+            .catch(() => navigate("/products"));
     }, [id, navigate]);
 
     if (!product) {
-        return <div>Loading...</div>;
+        return <div>Caricamento...</div>;
     }
     return (
         <div>
@@ -31,6 +36,9 @@ const ProductDetail = () => {
                 <button onClick={() => navigate("/cart")}>Aggiungi al Carrello</button>
                 <button onClick={() => navigate("/checkout")}>Vai al Checkout</button>
             </div>
+
+
+
 
         </div>
     );

@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 
 const Products = () => {
     const [products, setProducts] = useState([]);
+    const [prodottoScelto, setProdottoScelto] = useState(null);
 
     useEffect(() => {
         // Fetch products from a mock API
@@ -26,6 +27,16 @@ const Products = () => {
                     </div>
                 ))}
             </div>
+
+            {prodottoScelto && (
+                <div className="product-detail-modal">
+                    <h2>{prodottoScelto.title}</h2>
+                    <img src={prodottoScelto.image} alt={prodottoScelto.title} />
+                    <p>{prodottoScelto.description}</p>
+                    <p className="price">€{prodottoScelto.price}</p>
+                    <button onClick={() => setProdottoScelto(null)}>Chiudi</button>
+                </div>
+            )}
 
         </div>
     );

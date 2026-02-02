@@ -9,6 +9,7 @@ import ProductDetail from './components/ProductDetail.jsx';
 
 
 
+
 function App() {
 
   console.log("App component rendered");
