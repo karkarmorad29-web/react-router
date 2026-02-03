@@ -7,6 +7,8 @@ const ProductDetail = () => {
     const navigate = useNavigate();
     const [product, setProduct] = useState(null);
 
+
+
     useEffect(() => {
 
         fetch(`https://fakestoreapi.com/products/${id}`)
