@@ -9,39 +9,27 @@ const Products = () => {
 
     useEffect(() => {
         // Fetch products from a mock API
-        fetch('https://fakestoreapi.com/products')
-            .then(response => response.json())
-            .then(data => setProducts(data))
-            .catch(error => console.error('Error fetching products:', error));
+        axios.get('https://fakestoreapi.com/products')
+            .then(response => setProducts(response.data))
+            .catch(error => console.error('Errore nel fetch dei prodotti:', error));
     }, []);
-}
 
-
-
-return (
-    <div className="products-container">
-        <h1>I nostri prodotti</h1>
-        <div className="products-grid">
-            {products.map(product => (
-                <div key={product.id} className="product-card">
-                    <img src={product.image} alt={product.title} />
-                    <h2>{product.title}</h2>
-                    <Link to={`/products/${product.id}`}>Vedi Dettaglio</Link>
-                </div>
-            ))}
-        </div>
-
-        {prodottoScelto && (
-            <div className="product-detail-modal">
-                <h2>{prodottoScelto.title}</h2>
-                <img src={prodottoScelto.image} alt={prodottoScelto.title} />
-                <p>{prodottoScelto.description}</p>
-                <p className="price">€{prodottoScelto.price}</p>
-                <button onClick={() => setProdottoScelto(null)}>Chiudi</button>
+    return (
+        <div className="container col-12 justify-content-between">
+            <h1>Prodotti</h1>
+            <div className="card">
+                {products.map(product => (
+                    <div key={product.id} className="card-item">
+                        <img className="card-img" src={product.image} alt={product.title} />
+                        <h2 className="card-title">{product.title}</h2>
+                        <Link to={`/products/${product.id}`}>Vedi Dettaglio</Link>
+                    </div>
+                ))}
             </div>
-        )}
+        </div>
+    );
+};
 
-    </div>
-);
-}
+
+
 export default Products;

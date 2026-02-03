@@ -35,8 +35,8 @@ const ProductDetail = () => {
             <p>Price: ${product.price}</p>
 
             <div className="bottoni-dettaglio">
-                <button onClick={() => navigate("/cart")}>Aggiungi al Carrello</button>
-                <button onClick={() => navigate("/checkout")}>Vai al Checkout</button>
+                <button onClick={() => navigate("/products")}>Succesivo</button>
+                <button onClick={() => navigate("/products")}>precedente</button>
             </div>
 
 
