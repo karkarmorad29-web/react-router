@@ -15,11 +15,11 @@ const Products = () => {
     }, []);
 
     return (
-        <div className="container col-12 justify-content-between">
+        <div className="flex-container">
             <h1>Prodotti</h1>
-            <div className="card">
+            <div className="gap-1">
                 {products.map(product => (
-                    <div key={product.id} className="card-item">
+                    <div key={product.id} className="card">
                         <img className="card-img" src={product.image} alt={product.title} />
                         <h2 className="card-title">{product.title}</h2>
                         <Link to={`/products/${product.id}`}>Vedi Dettaglio</Link>

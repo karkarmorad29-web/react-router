@@ -52,40 +52,48 @@ nav a:hover {
   color: red;
 }
 
-.container {
+.flex-container {
+  display: flex;
   max-width: 1150px;
   margin: 0 auto;
-  display: flex;
-  column-gap: 20px;
-  width: calc((100% -2rem) / 3);
+  padding: 20px;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
 
+.gap-1 {
+  gap: 1rem;
 }
 
 .card {
-  background-color: #fff;
+  width: calc((100% - 2rem) / 3);
+  padding: 1rem;
+  background-color: gray;
   border-radius: 5px;
   box-shadow: var(--shadow);
-  padding: 20px 30px;
-  width: 100%;
   text-align: center;
   transition: var(--transition);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .card img {
-  max-width: 100%;
+  width: 100%;
   height: 200px;
   object-fit: cover;
   margin-bottom: 10px;
   gap: 10px;
 }
 
+
+
 .card-title {
   font-size: 1.2em;
   margin-bottom: 10px;
+  font-weight: bold;
+  color: gold;
 }
-
-
-
 
 
 .card:hover {
@@ -173,4 +181,5 @@ button {
   transition: var(--transition);
   font-weight: 600;
   cursor: pointer;
+  gap: 2rem;
 }
